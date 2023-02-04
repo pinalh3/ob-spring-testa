@@ -6,6 +6,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 public class Main {
     public static void main(String[] args) {
         ApplicationContext context = new ClassPathXmlApplicationContext("beans.xml");
-        context.getBean("saludo");
+        Saludo mensaje = (Saludo)context.getBean("saludo");
+        mensaje.imprimirSaludo();
     }
 }

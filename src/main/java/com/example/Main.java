@@ -6,6 +6,8 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 public class Main {
     public static void main(String[] args) {
         ApplicationContext context = new ClassPathXmlApplicationContext("beans.xml");
-        context.getBean("saludo");
+
+        UserService notificacionUsuario = (UserService) context.getBean("userService");
+        notificacionUsuario.notificacion.imprimirSaludo();
     }
 }
